@@ -10,8 +10,8 @@ let playerEl = document.getElementById("player-el");
 
 //object
 let player = {
-    name: "Jeff",
-    chips: 200,
+    name: "User",
+    chips: 250,
 };
 
 let money = player.chips
