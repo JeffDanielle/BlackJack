@@ -14,7 +14,9 @@ let player = {
     chips: 200,
 };
 
-playerEl.textContent = player.name + ": $" + player.chips;
+let money = player.chips
+
+playerEl.textContent = player.name + ": $" + money;
 
 
 
@@ -50,13 +52,23 @@ function renderGame() {
     } else if (sum === 21) {
         message = "Wohoo! You've got Blackjack!";
         hasBlackJack = true;
-        player.chips += 50
+        money += 50
+        player.chips = money;
     } else {
         message = "You're out of the game!";
         isAlive = false;
+        if (money > 0){
+            money -= 50
+            player.chips = money;
+        }
+        else {
+            money = 0
+            player.chips = money
+        }
     }
     messageEl.textContent = message;
     sumEl.textContent = "Sum: " + sum;
+    playerEl.textContent = `${player.name}: \$${money}`
 }
 
 function newGame() {
