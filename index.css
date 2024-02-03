@@ -33,3 +33,7 @@ button:hover {
     color: goldenrod;
     transition: 0.4s;
 }
+
+#instruct-el {
+    margin-top: 10%;
+}
